@@ -208,6 +208,7 @@
 }
 
 .Accounts {
+	display: inline-block;
 	position: absolute;
 	width: 560.95px;
 	height: 525.49px;
@@ -270,6 +271,7 @@
 	width: 86.12px;
 	height: 13px;
 	left: 10%;
+	white-space: nowrap;
 	top: 25%;
 	font-family: 'Montserrat';
 	font-style: normal;
@@ -409,7 +411,7 @@
 	top: 15%;
 }
 
-.chbox {
+.item {
 	display: inline-block;
 	position: absolute;
 	width: auto;
@@ -427,6 +429,196 @@
 
 .chbox3 {
 	top: 115px;
+}
+
+.floating-label { 
+	display: inline-block;
+	position: absolute;
+	left: 15px;
+	width: calc(100% - 2 * 10px);
+  	top: 145px;
+}
+
+.floating-input , .floating-select {
+  font-size:13px;
+  color: #9A9A9A;
+  width:100%;
+  height:35px;
+  background-color: transparent;
+  border:none;
+  border-bottom:1px solid #757575;
+}
+
+.floating-input:focus , .floating-select:focus {
+     outline:none;
+     border-bottom:2px solid #9A9A9A; 
+}
+
+.floating-text {
+  color: #9A9A9A; 
+  font-size:12px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left: 0px;
+  top: 10px;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+
+.floating-input:focus ~ label, .floating-input:not(:placeholder-shown) ~ label {
+  top: -5px;
+  font-size: 11px;
+  color: #9A9A9A;
+}
+
+.floating-input:focus ~ .bar:before, .floating-input:focus ~ .bar:after, .floating-select:focus ~ .bar:before, .floating-select:focus ~ .bar:after {
+	width:50%;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.floating-textarea {
+   min-height: 30px;
+   max-height: 260px; 
+   overflow:hidden;
+   overflow-x: hidden; 
+}
+
+.highlight {
+  position:absolute;
+  height:50%; 
+  width:100%; 
+  top:15%; 
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+
+.chbox4 {
+	top: 190px;
+}
+
+.floating-label2 {
+	top:220px;
+}
+
+.floating-label3 {
+	top:265px;
+}
+
+.HeaderInput {
+	position: absolute;
+	top: 310px;
+	left: 15px;
+	width: calc(100% - 2 * 10px);
+}
+
+.header {
+	position: absolute;
+	font-family: 'Montserrat';
+  	font-size: 13px;
+  	left: 0px;
+  	color: #9A9A9A;
+  	font-weight: 600;
+  	white-space: nowrap;
+}
+
+.SimpleInput {
+	position: absolute;
+	display: inline-block;
+	top: 25px;
+	width: 100%;
+	color: #9A9A9A;
+	padding-bottom: 4px;
+	background-color: transparent;
+  	border:none;
+  	border-bottom:1px solid #757575;
+}
+
+.SimpleInput:focus {
+    outline:none;
+    border-bottom:2px solid #9A9A9A; 
+}
+
+.HeaderInput1 {
+	top: 370px;
+}
+
+.HeaderInput2 {
+	top: 425px;
+}
+
+
+.combobox {
+	position: absolute;
+	top: 25px;
+	width: 100%;
+	background: transparent;
+	outline: none;
+	font-size: 12px;
+    color: #9A9A9A;
+	border: none;
+	padding-bottom: 4px;
+	border-bottom: 1px solid #9A9A9A; 
+}
+
+.combobox:focus {
+	border-bottom: 2px solid #9A9A9A; 
+}
+
+select option {
+    background: #303030;
+    color: #949494;
+    background-color: #303030;
+    padding: 0px;
+}
+
+.loadProxyBtn {
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+	top: 500px;
+	width: 120px;
+	height: 30px;
+	font-size: 11px;
+}
+
+.SaveBtn {
+	position: absolute;
+	width: 220px;
+	left: 987px;
+	top: 589px;
+}
+
+.HeaderInput3 {
+	top: 38px;
+}
+
+.HeaderInput4 {
+	top: 95px;
+}
+
+.HeaderInput5 {
+	top: 154px;
+}
+
+.HeaderInput6 {
+	top: 210px;
+}
+
+.HeaderInput7 {
+	top: 265px;
+}
+
+.InviteItems {
+	display: none;
 }
 </style>
 <div class="bot">
@@ -502,7 +694,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="InvitePage">
+		<div class="ModulePage">
 			<div class="Accounts">
 				<div class="AccountsHeaders">
 					<div class="textcols-item">
@@ -516,29 +708,101 @@
 					</div>
 				</div>
 			</div>
+			<button class="DeleteBtn">Delete <img src="images/del.png" class="DelIcon"></button>
+			<button class="GreenBtn AddBtn">Add<img src="images/add.png" class="DelIcon"></button>
+			<button class="GreenBtn SaveBtn">Save Task<img src="images/add.png" class="DelIcon"></button>
 			<div class="Setup">
 				<div class="SetupHeader">
 					<div class="HeaderText">Invite Setup</div>
-					<div class="chbox">
+				</div>
+				<div class="InviteItems">
+					<div class="item">
 						<input class="c1" type="checkbox">
 						<label for="c1" class="clabel">Rules bypass</label>
 					</div>
-					<div class="chbox chbox1">
+					<div class="item chbox1">
 						<input class="c1" type="checkbox">
 						<label for="c1" class="clabel">Open captcha</label>
 					</div>
-					<div class="chbox chbox2">
+					<div class="item chbox2">
 						<input class="c1" type="checkbox">
 						<label for="c1" class="clabel">Multithreading</label>
 					</div>
-					<div class="chbox chbox3">
+					<div class="item chbox3">
 						<input class="c1" type="checkbox">
 						<label for="c1" class="clabel">Reaction bypass</label>
 					</div>
-				</div>
+					<div class="floating-label">      
+						<input class="floating-input" type="text" placeholder=" ">
+						<span class="highlight"></span>
+						<label class="floating-text">Reactions message link</label>
+	   				</div>
+	   				<div class="item chbox4">
+						<input class="c1" type="checkbox">
+						<label for="c1" class="clabel">Enable refferal system</label>
+					</div>
+					<div class="floating-label floating-label2">      
+						<input class="floating-input" type="text" placeholder=" ">
+						<span class="highlight"></span>
+						<label class="floating-text">Refferal code</label>
+	   				</div>
+	   				<div class="floating-label floating-label3">      
+						<input class="floating-input" type="text" placeholder=" ">
+						<span class="highlight"></span>
+						<label class="floating-text">Refferal channel link</label>
+	   				</div>
+	   				<div class="HeaderInput">
+		   				<div class="header">Invite Link (Code):</div>
+		   				<input type="text" placeholder="https://discord.gg/d1plomat" class="SimpleInput">
+		   			</div>
+		   			<div class="HeaderInput HeaderInput1">
+		   				<div class="header">Type of proxy:</div>
+			   			<select class="combobox">
+			   				 <option value="pizda">NONE</option>
+							 <option value="pizda">HTTP/HTTPS</option>
+							 <option value="pizda">SOCKS4</option>
+							 <option value="pizda">SOCKS5</option>
+						</select>
+					</div>
+					<div class="HeaderInput HeaderInput2">
+		   				<div class="header">Delay:</div>
+		   				<input type="text" placeholder="4000" class="SimpleInput">
+		   			</div>
+		   			<button class="GreenBtn loadProxyBtn">Load proxies</button>
+		   		</div>
+		   		<div class="MessageItems">
+		   			<div class="HeaderInput HeaderInput3">
+		   				<div class="header">Server:</div>
+			   			<select class="combobox">
+							 <option value="pizda">NONE</option>
+							 <option value="pizda">Cerberus Software</option>
+						</select>
+					</div>
+					<div class="HeaderInput HeaderInput4">
+		   				<div class="header">Channel:</div>
+			   			<select class="combobox">
+							 <option value="pizda">NONE</option>
+							 <option value="pizda">general</option>
+						</select>
+					</div>
+					<div class="HeaderInput HeaderInput5">
+		   				<div class="header">Language:</div>
+			   			<select class="combobox">
+							 <option value="pizda">Eng new</option>
+							 <option value="pizda">Eng old</option>
+							 <option value="pizda">Rus</option>
+						</select>
+					</div>
+					<div class="HeaderInput HeaderInput6">
+		   				<div class="header">Delay:</div>
+		   				<input type="text" placeholder="60000" class="SimpleInput">
+		   			</div>
+		   			<div class="HeaderInput HeaderInput7">
+		   				<div class="header">Webhook:</div>
+		   				<input type="text" placeholder="Url" class="SimpleInput">
+		   			</div>
+		   		</div>
 			</div>
-			<button class="DeleteBtn">Delete <img src="images/del.png" class="DelIcon"></button>
-			<button class="GreenBtn">Add</button>
 		</div>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
