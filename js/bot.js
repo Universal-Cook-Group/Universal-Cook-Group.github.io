@@ -24,47 +24,77 @@ $(".dsmodule").click(function() {
 
 $("#radio-1").change(function(){
     hideModule();
+    $('.TaskPage').css('display', 'inline-block');
 });
 
 $("#radio-2").change(function(){
     showModule();
+    $('.SaveBtn').css('display', 'inline-block');
     $('.HeaderText').text('Invite Setup');
     $('.InviteItems').css('display', 'inline-block');
+    $('.SettingsItems').css('display', 'none');
     $('.MessageItems').css('display', 'none');
+    $('.TwitterItems').css('display', 'none');
+    $('.GiveawayItems').css('display', 'none');
 });
 
 $("#radio-3").change(function(){
     showModule();
+    $('.SaveBtn').css('display', 'inline-block');
     $('.HeaderText').text('Message Setup');
     $('.MessageItems').css('display', 'inline-block');
+    $('.SettingsItems').css('display', 'none');
     $('.InviteItems').css('display', 'none');
+    $('.TwitterItems').css('display', 'none');
+    $('.GiveawayItems').css('display', 'none');
 });
 
 $("#radio-4").change(function(){
     showModule();
+    $('.SaveBtn').css('display', 'inline-block');
     $('.HeaderText').text('Giveaway Setup');
-    $('.InviteItems').css('display', 'none');
+    $('.GiveawayItems').css('display', 'inline-block');
+    $('.SettingsItems').css('display', 'none');
     $('.MessageItems').css('display', 'none');
+    $('.InviteItems').css('display', 'none');
+    $('.TwitterItems').css('display', 'none');
 });
 
 $("#radio-5").change(function(){
     showModule();
-    $('.HeaderText').text('Twitter');
-    $('.InviteItems').css('display', 'none');
+    $('.SaveBtn').css('display', 'inline-block');
+    $('.HeaderText').text('Twitter Setup');
+    $('.TwitterItems').css('display', 'inline-block');
+    $('.SettingsItems').css('display', 'none');
+    $('.GiveawayItems').css('display', 'none');
     $('.MessageItems').css('display', 'none');
+    $('.InviteItems').css('display', 'none');
+});
+
+$("#radio-6").change(function(){
+    showModule();
+    $('.SaveBtn').css('display', 'none');
+    $('.HeaderText').text('Advanced modules');
+    $('.SettingsItems').css('display', 'inline-block');
+    $('.TwitterItems').css('display', 'none');
+    $('.GiveawayItems').css('display', 'none');
+    $('.MessageItems').css('display', 'none');
+    $('.InviteItems').css('display', 'none');
 });
 
 function showModule()
 {
+    $('.ModulePage').css('display', 'inline-block');
     $('.Setup').css('display', 'inline-block');
-    $('.SaveBtn').css('display', 'inline-block');
     $(".Accounts").css("display", "inline-block");
     $(".DeleteBtn").css("display", "inline-block");
     $(".AddBtn").css("display", "inline-block");
+    $('.TaskPage').css('display', 'none');
 }
 
 function hideModule()
 {
+    $('.ModulePage').css('display', 'none');
     $('.Setup').css('display', 'none');
     $('.SaveBtn').css('display', 'none');
     $(".Accounts").css("display", "none");
