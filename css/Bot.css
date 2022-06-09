@@ -1,4 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+.demoText {
+	position: absolute;
+	text-align: center;
+  	top: -35px;
+	font-family: 'Montserrat';
+	font-style: normal;
+	white-space: nowrap;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 0px;
+	z-index: 9999;
+	position: absolute;                       
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+	color: #9A9A9A;
+}
 .bot {
 	position: absolute;
   	left: 50%;
