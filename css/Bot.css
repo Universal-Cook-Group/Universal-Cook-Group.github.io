@@ -1,18 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+.bot {
+	position: absolute;
+  	left: 50%;
+  	top: 65%;
+  	transform: translate(-50%, -50%);
+  	z-index: 99;
+}
 #rectangle {
+	-moz-transform-origin: left center;
 	-webkit-touch-callout: none; /* iOS Safari */
   	-webkit-user-select: none;   /* Chrome/Safari/Opera */
   	-khtml-user-select: none;    /* Konqueror */
   	-moz-user-select: none;      /* Firefox */
-  	-ms-user-select: none;       /* Internet Explorer/Edge */
+  	-ms-user-select: none;   
+  	min-width: 430px;    /* Internet Explorer/Edge */
  	user-select: none; 
-	position: absolute;
 	width: 1350px;
 	height: 650px;
-	left: 0px;
-	top: 0px;
 	background: #000000;
 }
+
 #backimage {
 	position: absolute;
 	bottom: 0px;
@@ -21,9 +28,9 @@
 	height: 621px;
 }
 
-#toolbal {
+#botToolbal {
 	position: absolute;
-	width: 1350;
+	width: 1350px;
 	height: 29px;
 	left: 0px;
 	top: 0px;
@@ -460,9 +467,11 @@
 
 .floating-text {
   color: #9A9A9A; 
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
   font-size:12px;
   font-weight:normal;
-  font-family: 'Montserrat';
   position:absolute;
   pointer-events:none;
   left: 0px;

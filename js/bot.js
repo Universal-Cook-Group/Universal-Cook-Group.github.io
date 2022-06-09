@@ -120,3 +120,49 @@ function onMenuOut() {
     $('.DiscordModules').css('width', '0px');
     $('.Settings').css('top', '127px');
 }
+
+$.fn.scale = function(x) {
+    if(!$(this).filter(':visible').length && x!=1)return $(this);
+    if(!$(this).parent().hasClass('scaleContainer')){
+        $(this).wrap($('<div class="scaleContainer">').css('position','relative'));
+        $(this).data({
+            'originalWidth':$(this).width(),
+            'originalHeight':$(this).height()});
+    }
+    $(this).css({
+        'transform': 'scale('+x+')',
+        '-ms-transform': 'scale('+x+')',
+        '-moz-transform': 'scale('+x+')',
+        '-webkit-transform': 'scale('+x+')',
+        'transform-origin': 'left bottom',
+        '-ms-transform-origin': 'left bottom',
+        '-moz-transform-origin': 'left bottom',
+        '-webkit-transform-origin': 'left bottom',
+        'position': 'absolute',
+        'bottom': '0',
+        'left': '0',
+    });
+    if(x==1)
+        $(this).unwrap().css('position','static');else
+            $(this).parent()
+                .width($(this).data('originalWidth')*x)
+                .height($(this).data('originalHeight')*x);
+    return $(this);
+};
+
+function Resize()
+{
+	let scaleWidth = 1920;
+	let winWidth = $(window).width();     // высота окна
+    let ratio = winWidth / scaleWidth;      // отношение между ними
+	if (winWidth < 450)
+	{
+		ratio += 0.075;
+	}
+	$('#rectangle').scale(ratio);
+}
+
+Resize();
+window.addEventListener('resize', function(event) {
+    Resize();
+}, true);
